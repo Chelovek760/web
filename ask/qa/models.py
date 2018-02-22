@@ -19,9 +19,14 @@ class Question(models.Model):
     author = models.ForeignKey(User, default= 'x')
     likes = models.ManyToManyField(User, related_name="like_set")
 
+    def __str__(self):
+        return self.text
 
 class Answer(models.Model):
     text = models.TextField(default="")
     added_at = models.DateField(blank = True, auto_now_add=True)
     question = models.ForeignKey(Question, null=True, on_delete=models.SET_NULL)
     author = models.ForeignKey(User, default= 'x')
+
+    def __str__(self):
+        return self.text
