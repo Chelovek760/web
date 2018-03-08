@@ -13,7 +13,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from qa.views import question
+from views import question
 
 urlpatterns = [
     url(r'^(?P<num>\d+)/$', question),
