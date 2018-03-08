@@ -16,11 +16,11 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from ask.views import found, not_found, init25
-from qa.views import index, popular, ask, login_view, signup
+from qa.views import popular, ask, login_view, signup
 
 urlpatterns = [
 
-    url(r'^$', index),
+  #  url(r'^$', index),
 
     url(r'^init25/', init25),
     url(r'^login/', login_view),
