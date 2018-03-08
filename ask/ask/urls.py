@@ -15,23 +15,22 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from ask.views import found, not_found, init25
-from qa.views import popular, ask, login_view, signup
-
+#from ask.views import found, not_found, init25
+from ask.qa.views import popular, new
 urlpatterns = [
 
-  #  url(r'^$', index),
+   url(r'^$', new),
 
-    url(r'^init25/', init25),
-    url(r'^login/', login_view),
-    url(r'^signup/', signup),
-    url(r'^ask/', ask),
+   # url(r'^init25/', init25),
+    #url(r'^login/', login_view),
+    #url(r'^signup/', signup),
+    #url(r'^ask/', ask),
     # url(r'^answer/', answer),
     url(r'^popular/', popular),
-    url(r'^new/', found),
+    #url(r'^new/', found),
 
-    url(r'^admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
     url(r'^question/', include('qa.urls')),
 
-    url(r'^', not_found),
+    #url(r'^', not_found),
 ]
