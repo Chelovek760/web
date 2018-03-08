@@ -53,7 +53,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ask.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -119,4 +118,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATES = [{'DIRS': (os.path.join(BASE_DIR, 'ask/../templates'),)}]
