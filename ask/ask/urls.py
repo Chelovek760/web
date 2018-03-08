@@ -16,7 +16,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 #from ask.views import found, not_found, init25
-from ask.qa.views import popular, new
+from views import popular, new
 urlpatterns = [
 
    url(r'^$', new),
