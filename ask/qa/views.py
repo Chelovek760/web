@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.http import HttpResponse,Http404
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from qa.models import Question, Answer
 
@@ -28,8 +28,7 @@ def popular(request):
                    'session': request.session, })
 
 
-
-def new (request):
+def new(request):
     try:
         page = int(request.GET.get("page"))
     except ValueError:
@@ -47,10 +46,12 @@ def new (request):
                    'page': page,
                    'user': request.user,
                    'session': request.session, })
-def question (request):
+
+
+def question(request):
     try:
         quest = Question.objects.get(id=nomer)
-        answer=Answer.objects.filter(question=quest)
+        answer = Answer.objects.filter(question=quest)
     except Question.DoesNotExist:
         raise Http404
     return render(request, 'Guest.html')
